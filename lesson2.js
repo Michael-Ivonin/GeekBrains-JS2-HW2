@@ -2,11 +2,13 @@
  * Created by Michael on 13.04.2017.
  */
 
+"use strict";
+
 function CheckLogin(inputClass) {
   var inputField = document.querySelector(inputClass),
       xhr = new XMLHttpRequest(),
       message = "&#10004;",
-      style = "color: green;",
+      style = "color: green; font-size: 12px;",
       logins,
       outputField;
 
@@ -48,7 +50,7 @@ function CheckLogin(inputClass) {
     }
 
     if (!outputField) {
-      outputField = document.createElement("p");
+      outputField = document.createElement("span");
       inputField.parentNode.insertBefore(outputField, this.nextElementSibling);
       outputField.innerHTML = message;
       outputField.style = style;
@@ -58,7 +60,7 @@ function CheckLogin(inputClass) {
     }
 
     message = "&#10004;";
-    style = "color: green;";
+    style = "color: green; font-size: 12px;";
   }
 }
 
